@@ -12,12 +12,18 @@ public class Calculator {
         System.out.println("4 - Division");
 
         System.out.println("---------------------");
-        System.out.print("Choose a number of the operation: ");
-        int op = sc.nextInt();
+
+        int op;
+        do {
+            System.out.print("Choose a number of the operation: ");
+            op = sc.nextInt();
+        } while (op < 1 || op > 4);
+
         System.out.print("Enter the first number: ");
         float num1 = sc.nextInt();
         System.out.print("Enter the second number: ");
         float num2 = sc.nextInt();
+
         System.out.println("---------------------");
 
         switch (op) {
