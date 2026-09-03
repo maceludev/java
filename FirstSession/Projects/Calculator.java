@@ -40,6 +40,10 @@ public class Calculator {
                 System.out.println(multi);
                 break;
             case 4:
+                if (num2 == 0) {
+                    System.out.println("It's not possible to divide by zero");
+                    break;
+                }
                 float div = num1 / num2;
                 System.out.println(div);
         }

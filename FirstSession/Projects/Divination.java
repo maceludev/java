@@ -1,6 +1,6 @@
 package FirstSession.Projects;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Divination {
     static void oneLine() {
@@ -14,29 +14,39 @@ public class Divination {
     }
 
     static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         printTittle();
 
-        System.out.print("Enter a word: ");
-        String word = sc.next();
-        oneLine();
+        ArrayList<String> words = new ArrayList<>(List.of("Monkey", "Dog", "Cat", "House", "Bat"));
 
-        StringBuilder hiddenWord = new StringBuilder();
-        for (int i = 1; i < word.length(); i++) {
-            hiddenWord.append("_");
+        Random random = new Random();
+        int wordIndex = random.nextInt(0, words.size());
+
+        String word = words.get(wordIndex).toLowerCase();
+
+        ArrayList<Character> letters = new ArrayList<>();
+        for (int i = 0; i < word.length(); i++) {
+            letters.add(word.charAt(i));
+        }
+
+        ArrayList<Character> hiddenWord = new ArrayList<>();
+        for (int i = 1; i < word.length() + 1; i++) {
+            hiddenWord.add('_');
         }
         System.out.println("Word - " + hiddenWord);
-        System.out.println();
+        oneLine();
 
-        while (hiddenWord.indexOf("_") != -1) {
+
+        while (hiddenWord.contains('_')) {
             System.out.print("Enter a character: ");
-            String character = sc.next();
+            String character = sc.next().toLowerCase();
 
             if (word.contains(character)) {
                 for (int i = 0; i < word.length(); i++) {
                     if (word.charAt(i) == character.charAt(0)) {
-                        hiddenWord.replace(i, i+1, character);
+                        hiddenWord.set(i, word.charAt(i));
                     }
                 }
             }
