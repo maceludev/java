@@ -1,7 +1,5 @@
 package SecondSession.Projects;
 
-import java.util.Objects;
-
 public class No<E> {
     private E valor;
     private No<E> proxNo;
