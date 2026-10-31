@@ -1,4 +1,4 @@
-package SecondSession.Projects;
+package SecondSession.Projects.LinkedList;
 
 public class No<E> {
     private E valor;
