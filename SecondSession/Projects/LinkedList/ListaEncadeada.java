@@ -1,4 +1,4 @@
-package SecondSession.Projects;
+package SecondSession.Projects.LinkedList;
 
 import java.util.NoSuchElementException;
 
@@ -42,7 +42,7 @@ public class ListaEncadeada<T> {
         No<T> no = new No<>(valor);
         if (estaVazia()) {
             setCabeca(no);
-        } else {
+            } else {
             cauda.setProxNo(no);
         }
         setCauda(no);
@@ -109,7 +109,7 @@ public class ListaEncadeada<T> {
 
     // Métodos de busca -----------------------------------------------------------------------
     public T buscarValor(int indice) throws IndexOutOfBoundsException {
-        if (estaVazia() || indice > tamanho - 1) {
+        if (estaVazia() || indice > tamanho - 1 || indice < 0) {
             throw new IndexOutOfBoundsException();
         } else {
             int i = 0;
